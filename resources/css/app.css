@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hidden {
+    display: none;
+}
+
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    td[data-label] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.75rem; 
+        padding-bottom: 0.75rem;
+    }
+
+    td[data-label]::before {
+        content: attr(data-label) ": ";
+        font-weight: 600;
+        color: #4B5563; 
+        margin-right: 0.5rem;
+    }
+}
