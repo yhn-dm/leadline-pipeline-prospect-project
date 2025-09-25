@@ -121,13 +121,15 @@ class ProspectController extends Controller
                 'email' => $prospect->email,
                 'phone' => $prospect->phone,
                 'description' => $prospect->comment,
+                'converted_by_user_id' => auth()->id(),   // 👈
+                'converted_at' => now(),          // 👈
             ]);
 
             $prospect->delete();
-
-
-            return redirect()->route('clients.index')->with('success', 'Prospect converti en client avec succès.');
+            return redirect()->route('clients.index')
+                ->with('success', 'Prospect converti en client avec succès.');
         }
+
 
         $prospect->update([
             'name' => $validated['name'],

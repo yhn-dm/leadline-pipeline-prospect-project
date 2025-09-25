@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Topbar sticky alignée à la sidebar -->
+<!-- Topbar sticky -->
 <div class="sticky top-0 bg-gray-50 border-b border-gray-200 shadow-sm z-10 px-4 md:px-8 py-4">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <!-- 🏢 Infos organisation -->
+        <!-- Infos organisation -->
         <div>
             <h1 class="text-xl font-semibold text-gray-700">Organisation</h1>
             <p class="text-sm text-gray-500">Bienvenue dans votre organisation.</p>
         </div>
 
-        <!-- 👥 Bouton d'invitation -->
+        <!-- Bouton d'invitation -->
         @if ($organization)
             <form method="POST" action="{{ route('organizations.invite') }}" class="w-full md:w-auto">
                 @csrf
@@ -50,7 +50,7 @@
 
         <div class="p-8">
             @if ($collaborators->count() > 0)
-                <!-- ✅ Wrapper avec arrondis, ombre, scroll et bordure -->
+                <!-- Wrapper avec arrondis, ombre, scroll et bordure -->
                 <div class="overflow-x-auto border border-gray-200 rounded-lg shadow">
                     <div class="min-w-max w-full overflow-hidden rounded-lg">
                         <table class="w-full divide-y divide-gray-200">

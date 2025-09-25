@@ -24,7 +24,7 @@
     <!-- topbar mobile -->
     <div id="topbarMobile"
         class="md:hidden fixed top-0 left-0 right-0 z-50 bg-white h-16 shadow flex items-center justify-between px-4 border-b">
-        <img src="{{ asset('logo.png') }}" alt="Logo" class="h-8">
+        <img src="{{ asset('logo.png') }}" alt="Logo" class="h-32">
         <button id="sidebarToggle"
             class="p-2 rounded-xl border border-gray-200 bg-white shadow hover:bg-gray-100 transition">
             <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"

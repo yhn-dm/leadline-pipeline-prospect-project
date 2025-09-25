@@ -161,7 +161,7 @@ Route::get('/clients/{client}/edit', [ClientController::class, 'edit'])->name('c
 
 // Prospects
 
-//Route::resource('activities', ActivityController::class)->middleware('auth');
+Route::resource('activities', ActivityController::class)->middleware('auth');
 Route::post('/activities', [ActivityController::class, 'store'])->name('activities.store');
 Route::put('/activities/{id}', [ActivityController::class, 'update'])->name('activities.update');
 

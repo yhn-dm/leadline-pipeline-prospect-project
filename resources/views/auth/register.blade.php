@@ -2,25 +2,25 @@
 @section('content')
     <div class="flex min-h-screen items-center justify-center bg-gray-100">
         <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-            <!-- ✅ Titre -->
+            <!-- Titre -->
             <h2 class="text-2xl font-semibold text-gray-700 text-center">Créer un Compte</h2>
             <p class="text-sm text-gray-500 text-center mt-1">Rejoignez-nous en quelques secondes</p>
 
-            <!-- ✅ Token d'invitation -->
+            <!-- Token d'invitation -->
             <input type="hidden" name="invitation" value="{{ $invitationToken }}">
 
-            <!-- ✅ Alerte sur l'organisation -->
+            <!-- Alerte sur l'organisation -->
             @if ($organizationId)
                 <p class="text-green-600 text-sm text-center mt-3">
-                    🎉 Vous rejoindrez automatiquement l'organisation associée.
+                    Vous rejoindrez automatiquement l'organisation associée.
                 </p>
             @else
                 <p class="text-red-500 text-sm text-center mt-3">
-                    ⚠️ Aucune organisation détectée. Vous pourrez en créer une après l'inscription.
+                    Aucune organisation détectée. Vous pourrez en créer une après l'inscription.
                 </p>
             @endif
 
-            <!-- ✅ Formulaire d'inscription -->
+            <!-- Formulaire d'inscription -->
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 

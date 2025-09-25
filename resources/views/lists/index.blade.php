@@ -3,7 +3,7 @@
 @section('content')
     <div class="sticky top-0 bg-gray-50 border-b border-gray-200 shadow-sm z-10 px-4 md:px-8 py-3">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <!-- Section gauche : Titre + breadcrumb -->
+
             <div>
                 <h1 class="text-xl font-semibold text-gray-700">{{ $space->name }}</h1>
 

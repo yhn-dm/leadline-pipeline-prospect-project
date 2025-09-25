@@ -19,4 +19,9 @@ class Activity extends Model
     {
         return $this->belongsToMany(User::class, 'activity_user', 'activity_id', 'user_id');
     }
+    public function clients()
+    {
+        return $this->belongsToMany(\App\Models\Client::class, 'activity_client', 'activity_id', 'client_id');
+    }
+
 }

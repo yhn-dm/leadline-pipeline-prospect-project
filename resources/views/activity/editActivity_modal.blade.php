@@ -1,6 +1,6 @@
 
 
-    <!-- Modal pour Modifier une activité -->
+    <!-- Modal Modifier une activité -->
     <div id="editActivityModal"
         class="hidden fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50 backdrop-blur-sm transition-opacity">
         <div class="relative p-4 w-full max-w-lg h-auto">

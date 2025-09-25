@@ -10,7 +10,7 @@
                     Planification des Activités
                 </h1>
             </div>
-            <!-- Facultatif : breadcrumb -->
+            <!-- breadcrumb -->
             <nav class="flex mt-1" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li class="inline-flex items-center">
@@ -36,7 +36,7 @@
             </nav>
         </div>
 
-        <!-- ✅ Bouton avec TON style -->
+
         <div class="flex space-x-4">
             <button onclick="openPlanActivityModal()"
                 class="flex items-center px-6 py-2.5 text-gray-600 bg-white border border-gray-300 rounded-lg shadow-sm hover:border-blue-500 hover:bg-blue-50 hover:text-gray-800 transition duration-300 focus:outline-none">

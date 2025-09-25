@@ -4,7 +4,7 @@
     <div class="min-h-screen flex flex-col w-64 flex-shrink-0 antialiased bg-gray-50 text-gray-800">
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
             <div class="hidden md:flex items-center justify-center h-20 border-b">
-                <img src="{{ asset('logo.png') }}" alt="CRM Prospect Logo" class="h-10">
+                <img src="{{ asset('logo.png') }}" alt="CRM Prospect Logo" class="h-32">
             </div>
 
             <div class="overflow-y-auto overflow-x-hidden flex-grow">

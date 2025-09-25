@@ -3,7 +3,7 @@
 <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-6">
 
 
-        <!-- ✅ Titre principal -->
+
         <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">
             Bienvenue sur notre plateforme CRM
         </h1>
@@ -11,7 +11,7 @@
             Gérez vos clients et optimisez vos interactions avec une solution simple et efficace.
         </p>
 
-        <!-- ✅ Boutons d'action -->
+
         <div class="flex space-x-4">
             <a href="{{ route('login') }}" 
                 class="px-6 py-3 bg-blue-500 text-white font-medium rounded-md shadow-md hover:bg-blue-600 transition">

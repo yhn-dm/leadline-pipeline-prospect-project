@@ -52,7 +52,7 @@
 
     <div class="mt-8 px-8">
         <div class="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden">
-            <!-- ✅ Barre de recherche -->
+            <!-- Barre de recherche -->
             <div
                 class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-6 bg-gray-50 border-b border-gray-200">
                 <div class="w-full md:w-1/2">
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- ✅ Tableau des Clients -->
+            <!-- Tableau des Clients -->
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <table id="clientTable" class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50 hidden md:table-header-group">

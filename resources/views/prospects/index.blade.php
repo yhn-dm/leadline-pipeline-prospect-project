@@ -71,16 +71,16 @@
 
     <!-- Contenu principal -->
     <div class="mt-8 px-8 pb-10">
-        <!-- 🔍 Recherche + Filtre -->
+        <!-- Recherche + Filtre -->
         <div
             class="flex flex-col md:flex-row items-center justify-between gap-4 p-6 bg-gray-50 border-b border-gray-200 rounded-t-lg">
-            <!-- 🔍 Recherche -->
+            <!-- Recherche -->
             <form class="w-full md:w-1/2 flex items-center space-x-3" id="searchForm">
                 <div class="relative flex-1">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817
-                                4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                    4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                         </svg>
                     </div>
                     <input type="text" id="searchInput"
@@ -93,14 +93,14 @@
                 </span>
             </form>
 
-            <!-- 🎯 Filtre par priorité -->
+            <!-- Filtre par priorité -->
             <div class="relative">
                 <button id="filterDropdownButton"
                     class="flex items-center py-2.5 px-4 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none">
                     <svg class="w-4 h-4 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12
-                                11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018
-                                17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                                    11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018
+                                    17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
                     </svg>
                     Filtrer par priorité
                 </button>
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <!-- 🧾 Tableau des prospects -->
+        <!-- Tableau des prospects -->
         <div class="bg-white border border-gray-200 shadow-sm rounded-b-lg overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
                 <!-- En-tête visible uniquement sur desktop -->
@@ -207,7 +207,7 @@
                         </tr>
                     @endforeach
 
-                    <!-- Ligne vide (gérée par JS si besoin) -->
+                    <!-- Ligne vide -->
                     <tr id="noProspectsRow" style="display: none;">
                         <td colspan="8" class="px-4 py-6 text-center text-gray-500">Aucun prospect trouvé.</td>
                     </tr>
@@ -269,7 +269,7 @@
 
             document.addEventListener('click', function(event) {
                 if (!filterDropdown.contains(event.target) && !filterDropdownButton.contains(event
-                    .target)) {
+                        .target)) {
                     filterDropdown.classList.add('hidden');
                 }
             });
