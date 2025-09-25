@@ -1,70 +1,133 @@
-<<<<<<< HEAD
-# leadline-pipeline-prospect-project
-=======
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Leadline — Pipeline Prospect CRM
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Pipeline Prospect** est une application web développée dans le cadre du **BTS SIO – SLAM (Épreuve E5 – Client léger)**.
+C’est un **CRM** conçu pour rendre la gestion des prospects, des clients et des activités **simple, collaborative et efficace**, avec une interface claire et rapide.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Sommaire
+- [Objectifs](#-objectifs)
+- [Fonctionnalités](#-fonctionnalités)
+- [Stack technique](#-stack-technique)
+- [Pré-requis](#-pré-requis)
+- [Installation](#-installation)
+- [Rôles & permissions (RBAC)](#-rôles--permissions-rbac)
+- [Structure du projet](#-structure-du-projet)
+- [Licence](#-licence)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Objectifs
+- Centraliser la gestion des **prospects** et des **clients**.
+- Organiser l’activité commerciale via des **espaces** et **listes thématiques**.
+- Planifier des **activités** (rendez-vous, relances) et suivre l’historique.
+- Encadrer les accès par **rôles** et **permissions**.
+- Proposer une UX **sobre, efficace, responsive** (Tailwind CSS).
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Fonctionnalités
+- Authentification (inscription, connexion, déconnexion).
+- **Espaces** : créer, modifier, archiver, supprimer ; associer des collaborateurs.
+- **Listes** : regrouper les prospects par thématique au sein d’un espace.
+- **Prospects** : créer, modifier, supprimer, **convertir en client**.
+- **Clients** : base consolidée des prospects transformés (consultation).
+- **Activités** : planifier rendez-vous/relances (date, heure, description, participants).
+- **Organisation** : inviter des utilisateurs, assigner des rôles (RBAC).
+- Interface avec **modales** pour créer/éditer sans rechargement de page.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Stack technique
+- **Backend** : Laravel 10 (architecture MVC)
+- **Frontend** : Blade, Tailwind CSS, JavaScript (vanilla)
+- **Base de données** : MySQL
+- **Environnement** : PHP 8+, Composer, Node.js/NPM
+- **Outils** : VS Code, PHPMyAdmin, Plesk (hébergement + SSL), Trello/Notion
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Pré-requis
+- **PHP** ≥ 8.1 (recommandé 8.2+)
+- **Composer** ≥ 2.x
+- **Node.js** ≥ 18 et **NPM**
+- **MySQL** ≥ 8.x
+- Git installé
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Installation
 
-## Contributing
+### 1) Cloner le dépôt
+```bash
+git clone https://github.com/yhn-dm/leadline-pipeline-prospect-project.git
+cd leadline-pipeline-prospect-project
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2) Dépendances PHP & Front
+```bash
+composer install
+npm install
+npm run dev   # ou npm run build pour la version de prod
+```
 
-## Code of Conduct
+### 3) Variables d’environnement
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+- Renseigner votre connexion **MySQL** dans `.env` (DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+- (Optionnel) Configurer **APP_NAME**, **APP_URL**, **MAIL_*** si nécessaire.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4) Migration & données de départ
+```bash
+php artisan migrate --seed
+```
+> `--seed` peut créer des données minimales selon vos seeders.
 
-## Security Vulnerabilities
+### 5) Lien de stockage (si uploads)
+```bash
+php artisan storage:link
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 6) Lancer le serveur local
+```bash
+php artisan serve
+```
+Application disponible sur : http://localhost:8000
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> bad227b (Initial commit for deployment)
+## Rôles & permissions (RBAC)
+- **Administrateur** : accès total à l’application, gestion des rôles.
+- **Manager** : gère prospects/clients/activités **attribués** ; pas de gestion des rôles.
+- **Collaborateur** : accès limité aux **espaces** et **listes assignés**.
+- **En attente** : rôle par défaut à l’invitation, **aucun accès** tant qu’il n’est pas validé.
+
+---
+
+## Structure du projet
+```
+crm_prospect/
+├─ app/                # Modèles, contrôleurs, logique métier
+├─ resources/
+│  ├─ views/           # Vues Blade
+│  └─ css|js           # Assets front (compilés par Vite)
+├─ routes/
+│  └─ web.php          # Routes web
+├─ database/
+│  ├─ migrations/      # Migrations
+│  └─ seeders/         # Seeders
+├─ public/             # Fichiers publics (build, images)
+└─ vendor/             # Dépendances Composer
+```
+
+---
+
+## Licence
+Projet académique – **BTS SIO SLAM 2025**  
+Distribué sous **Licence MIT**.
+
+---
+**Repo** : `yhn-dm/leadline-pipeline-prospect-project`
+
