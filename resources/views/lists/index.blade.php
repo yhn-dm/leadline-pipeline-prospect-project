@@ -34,17 +34,17 @@
 
             <!-- Boutons d'action -->
             <div class="flex flex-col sm:flex-row gap-2">
-                <button onclick="openCreateListModal()"
-                    class="flex items-center justify-center px-5 py-2.5 text-gray-600 bg-white border border-gray-300 rounded-lg shadow-sm hover:border-indigo-500 hover:bg-indigo-50 hover:text-gray-800 transition">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <button type="button" onclick="openCreateListModal()"
+                    class="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-xl shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
                     Créer une Liste
                 </button>
 
-                <button onclick="openAssignCollaboratorModalSpace()"
-                    class="flex items-center justify-center px-5 py-2.5 text-gray-600 bg-white border border-gray-300 rounded-lg shadow-sm hover:border-green-500 hover:bg-green-50 hover:text-gray-800 transition">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <button type="button" onclick="openAssignCollaboratorModalSpace()"
+                    class="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-xl shadow-sm hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1
                                              m9-4a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
@@ -56,8 +56,8 @@
 
 
     <!-- Contenu principal -->
-    <div class="mt-8 px-8 pb-10">
-        <div class="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden">
+    <div class="mt-4 sm:mt-6 px-4 sm:px-6 md:px-8 pb-10">
+        <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg overflow-hidden">
 
             <!-- Barre de recherche + filtre -->
             <div
@@ -150,17 +150,14 @@
                                         status: '{{ $list->status }}',
                                         space_id: {{ $list->space_id }}
                                     })"
-                                            class="px-4 py-2 text-sm font-medium text-black bg-yellow-400 rounded-md shadow-md hover:bg-yellow-500">
+                                            class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-800 bg-amber-100 rounded-lg hover:bg-amber-200 transition-colors">
                                             Modifier
                                         </button>
-
-                                        <form action="{{ route('lists.destroy', [$list->space_id, $list->id]) }}"
-                                            method="POST"
-                                            onsubmit="return confirm('Voulez-vous vraiment supprimer cette liste ?');">
+                                        <form action="{{ route('lists.destroy', [$list->space_id, $list->id]) }}" method="POST" class="inline" onsubmit="return confirm('Voulez-vous vraiment supprimer cette liste ?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md shadow-md hover:bg-red-600">
+                                                class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors">
                                                 Supprimer
                                             </button>
                                         </form>

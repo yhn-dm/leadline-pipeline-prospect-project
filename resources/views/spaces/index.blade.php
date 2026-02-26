@@ -2,15 +2,11 @@
 
 
 @section('content')
-    <div class="sticky top-0 bg-gray-50 border-b border-gray-200 shadow-sm flex items-center justify-between px-8 py-3 z-10">
-
-        <div>
-            <div class="flex items-center gap-x-3">
-                <h1 class="text-xl font-semibold text-gray-600 tracking-wide hover:text-gray-800 transition">
-                    Espaces
-                </h1>
-
-            </div>
+    <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 sm:px-6 md:px-8 py-3 z-10">
+        <div class="min-w-0">
+            <h1 class="text-lg sm:text-xl font-semibold text-gray-800 tracking-tight">
+                Espaces
+            </h1>
 
             <nav class="flex mt-1" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -43,26 +39,19 @@
             </nav>
         </div>
 
-        <div class="flex items-end space-x-3">
-            <button onclick="openCreateSpaceModal()"
-                class="flex items-center px-4 md:px-6 py-2 text-sm md:text-base text-white bg-blue-500 border border-transparent rounded-lg shadow-sm hover:border-indigo-500 hover:bg-indigo-50 hover:text-gray-800 transition ease-in-out duration-300 focus:outline-none">
-
-                <span class="hidden md:inline-flex justify-center items-center mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </span>
-
-                <span class="tracking-wide whitespace-nowrap">Créer un Espace</span>
+        <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="openCreateSpaceModal()"
+                class="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-xl shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                <span class="whitespace-nowrap">Créer un Espace</span>
             </button>
         </div>
 
     </div>
 
 
-    <div class="mt-8 px-8">
-        <div class="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden">
+    <div class="mt-4 sm:mt-6 px-4 sm:px-6 md:px-8 pb-8">
+        <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg overflow-hidden">
 
             <!-- Barre de recherche et filtres -->
             <div
@@ -169,15 +158,15 @@
                                     <span class="md:hidden font-semibold text-gray-600 block mb-2">Actions :</span>
                                     <div class="flex flex-wrap gap-2 md:justify-center">
                                         <a href="{{ route('lists.index', $space->id) }}"
-                                            class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600">
+                                            class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors">
                                             Voir
                                         </a>
-                                        <button onclick="openEditSpaceModal({{ $space->id }})"
-                                            class="px-4 py-2 text-sm font-medium text-black bg-yellow-400 rounded-md shadow-md hover:bg-yellow-500">
+                                        <button type="button" onclick="openEditSpaceModal({{ $space->id }})"
+                                            class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-800 bg-amber-100 rounded-lg hover:bg-amber-200 transition-colors">
                                             Modifier
                                         </button>
-                                        <button onclick="confirmDelete({{ $space->id }})"
-                                            class="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md shadow-md hover:bg-red-600">
+                                        <button type="button" onclick="confirmDelete({{ $space->id }})"
+                                            class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors">
                                             Supprimer
                                         </button>
                                     </div>

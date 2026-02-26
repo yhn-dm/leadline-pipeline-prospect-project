@@ -1,11 +1,10 @@
 @extends('layouts.guest')
 
 @section('content')
-    <div class="flex min-h-screen items-center justify-center bg-gray-100">
-        <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-            
+    <div class="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-8">
+        <div class="bg-white shadow-card rounded-card-lg p-6 sm:p-8 max-w-md w-full border border-gray-200/80">
             <!-- Titre -->
-            <h2 class="text-2xl font-semibold text-gray-700 text-center">Connexion</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 text-center">Connexion</h2>
             <p class="text-sm text-gray-500 text-center mt-1">Connectez-vous pour accéder à votre espace</p>
 
             <!-- Session Status -->
@@ -52,7 +51,7 @@
 
                 <div class="mt-6">
                     <button type="submit"
-                        class="w-full px-6 py-2 bg-blue-500 text-white font-medium rounded-md shadow-md hover:bg-blue-600 transition">
+                        class="w-full px-6 py-3 bg-indigo-600 text-white font-medium rounded-xl shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
                         Connexion
                     </button>
                 </div>

@@ -5,13 +5,11 @@
 
 @section('content')
     <!-- Topbar sticky breadcrumb -->
-    <div class="sticky top-0 bg-gray-50 border-b border-gray-200 shadow-sm flex items-center justify-between px-8 py-3 z-10">
-        <div>
-            <div class="flex items-center gap-x-3">
-                <h1 class="text-xl font-semibold text-gray-600 tracking-wide hover:text-gray-800 transition">
-                    Dashboard
-                </h1>
-            </div>
+    <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 sm:px-6 md:px-8 py-3 z-10">
+        <div class="min-w-0">
+            <h1 class="text-lg sm:text-xl font-semibold text-gray-800 tracking-tight">
+                Dashboard
+            </h1>
 
             <!-- Breadcrumb -->
             <nav class="flex mt-1" aria-label="Breadcrumb">
@@ -38,7 +36,7 @@
     </div>
 
     <!-- Contenu -->
-    <div class="mt-6 px-6 pb-8 space-y-6">
+    <div class="mt-4 sm:mt-6 px-4 sm:px-6 md:px-8 pb-8 space-y-6">
         {{-- KPI --}}
         @php
             $deltaClass = fn($n) => ($n ?? 0) >= 0 ? 'text-green-600' : 'text-red-600';
@@ -93,13 +91,13 @@
             ];
         @endphp
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
             @foreach ($cards as $card)
-                <div class="bg-white border border-gray-200 shadow-sm rounded-md p-4">
-                    <h3 class="text-mg font-bold text-gray-600 mb-1">{{ $card['label'] }}</h3>
+                <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 hover:shadow-card-hover transition-shadow">
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">{{ $card['label'] }}</h3>
                     <p class="text-2xl font-bold text-gray-900 leading-tight">{{ $card['value'] }}</p>
                     @if (!empty($card['sub']))
-                        <p class="text-[13px] font-bold mt-1 {{ $card['subClass'] }}">{{ $card['sub'] }}</p>
+                        <p class="text-xs font-medium mt-1.5 {{ $card['subClass'] }}">{{ $card['sub'] }}</p>
                     @endif
                 </div>
             @endforeach
@@ -109,7 +107,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-stretch">
             <!-- Évolution Clients vs Prospects -->
             <div
-                class="lg:col-span-2 bg-white border border-gray-200 shadow-sm rounded-md p-4 h-full flex flex-col min-w-0">
+                class="lg:col-span-2 bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 sm:p-5 h-full flex flex-col min-w-0">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="text-gray-800 text-mg font-bold">Évolution Clients vs Prospects</h3>
                     <div class="flex items-center gap-2">
@@ -133,7 +131,7 @@
             </div>
 
             <!-- Pipeline des prospects -->
-            <div class="bg-white border border-gray-200 shadow-sm rounded-md p-4 h-full flex flex-col min-w-0">
+            <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 sm:p-5 h-full flex flex-col min-w-0">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="text-gray-800 text-base font-semibold">Pipeline des prospects</h3>
                     <span class="text-[11px] text-gray-500">30 derniers jours</span>
@@ -174,7 +172,7 @@
 
 
             <!-- Sources d’acquisition -->
-            <div class="bg-white border border-gray-200 shadow-sm rounded-md p-4 h-full flex flex-col min-w-0">
+            <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 sm:p-5 h-full flex flex-col min-w-0">
                 <h3 class="text-gray-800 text-mg font-bold mb-3">Sources d’acquisition</h3>
                 <div class="relative w-full flex-1 min-h-[300px]">
                     <canvas id="acqPie"></canvas>
@@ -186,7 +184,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-[3fr_4fr_3fr] gap-3 items-stretch">
             {{-- Activités à venir - Aujourd’hui --}}
-            <div class="bg-white border border-gray-200 shadow-sm rounded-md p-3 lg:h-[210px]">
+            <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 lg:h-[210px]">
                 <h3 class="text-gray-800 text-mg font-bold mb-2 leading-tight">Activités à venir - Aujourd’hui</h3>
                 <ul class="divide-y divide-gray-100 lg:max-h-[160px] overflow-y-auto">
                     @forelse ($todayActivities as $a)
@@ -204,7 +202,7 @@
                 </ul>
             </div>
             {{-- Performance Collaborateurs --}}
-            <div class="bg-white border border-gray-200 shadow-sm rounded-md p-3 lg:h-[210px]">
+            <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 lg:h-[210px]">
                 <h3 class="text-gray-800 text-base font-semibold mb-2 leading-tight">Performance Collaborateurs</h3>
 
                 @php
@@ -241,7 +239,7 @@
 
 
             {{-- Activité Urgente --}}
-            <div class="bg-white border border-gray-200 shadow-sm rounded-md p-3 lg:h-[210px]">
+            <div class="bg-white border border-gray-200/80 shadow-card rounded-card-lg p-4 lg:h-[210px]">
                 <h3 class="text-gray-800 text-mg font-bold mb-2 leading-tight">Activité Urgente</h3>
                 <div class="border-t border-gray-200 pt-1 lg:max-h-[160px] overflow-y-auto">
                     <div class="grid grid-cols-2 text-[11px] text-gray-500 py-1">

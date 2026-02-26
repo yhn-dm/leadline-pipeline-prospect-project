@@ -2,12 +2,12 @@
 
 @section('content')
 <!-- Topbar sticky -->
-<div class="sticky top-0 bg-gray-50 border-b border-gray-200 shadow-sm z-10 px-4 md:px-8 py-4">
+<div class="sticky top-0 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm z-10 px-4 sm:px-6 md:px-8 py-4">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <!-- Infos organisation -->
         <div>
-            <h1 class="text-xl font-semibold text-gray-700">Organisation</h1>
-            <p class="text-sm text-gray-500">Bienvenue dans votre organisation.</p>
+            <h1 class="text-lg sm:text-xl font-semibold text-gray-800">Organisation</h1>
+            <p class="text-sm text-gray-500 mt-0.5">Bienvenue dans votre organisation.</p>
         </div>
 
         <!-- Bouton d'invitation -->
@@ -15,7 +15,7 @@
             <form method="POST" action="{{ route('organizations.invite') }}" class="w-full md:w-auto">
                 @csrf
                 <button type="submit"
-                    class="w-full md:w-auto flex items-center justify-center px-4 py-2 text-sm text-white bg-green-500 hover:bg-green-600 font-medium rounded-md shadow transition">
+                    class="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-xl shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M17 20h5v-2a4 4 0 00-4-4h-1
@@ -48,10 +48,10 @@
             </div>
         @endif
 
-        <div class="p-8">
+        <div class="p-4 sm:p-6 md:p-8">
             @if ($collaborators->count() > 0)
                 <!-- Wrapper avec arrondis, ombre, scroll et bordure -->
-                <div class="overflow-x-auto border border-gray-200 rounded-lg shadow">
+                <div class="overflow-x-auto border border-gray-200/80 rounded-card-lg shadow-card">
                     <div class="min-w-max w-full overflow-hidden rounded-lg">
                         <table class="w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50 hidden md:table-header-group">
