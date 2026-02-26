@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 min-h-screen antialiased">
     @yield('content')
     
     <script src="./node_modules/preline/dist/preline.js"></script>
