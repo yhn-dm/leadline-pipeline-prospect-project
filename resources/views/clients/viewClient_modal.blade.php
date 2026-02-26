@@ -1,17 +1,14 @@
     <!-- Modal Voir un Client -->
     <div id="viewClientModal" tabindex="-1" aria-hidden="true"
-        class="hidden fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50 backdrop-blur-sm transition-opacity">
-        <div class="relative p-4 w-full max-w-md h-auto">
-            <div class="relative p-6 bg-white rounded-lg shadow-lg sm:p-6">
-
-                <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b">
-                    <h3 class="text-lg font-semibold text-gray-900">
-                        Informations du Client
-                    </h3>
-                    <button type="button"
-                        class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black/50 backdrop-blur-sm p-4">
+        <div class="relative w-full max-w-md">
+            <div class="relative p-6 bg-white rounded-card-lg shadow-xl border border-gray-200/80 sm:p-6">
+                <div class="flex justify-between items-center pb-4 mb-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900">Informations du Client</h3>
+                    <button type="button" aria-label="Fermer"
+                        class="text-gray-400 hover:bg-gray-100 hover:text-gray-700 rounded-lg p-2 transition-colors"
                         onclick="closeClientModal()">
-                        ✕
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
 
@@ -37,7 +34,7 @@
 
                 <div class="mt-6 flex justify-end">
                     <button type="button" onclick="closeClientModal()"
-                        class="px-5 py-2.5 bg-gray-300 text-black rounded-lg hover:bg-gray-400 transition">
+                        class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors">
                         Fermer
                     </button>
                 </div>

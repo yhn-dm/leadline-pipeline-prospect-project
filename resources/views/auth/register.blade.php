@@ -1,9 +1,8 @@
 @extends('layouts.guest')
 @section('content')
-    <div class="flex min-h-screen items-center justify-center bg-gray-100">
-        <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-            <!-- Titre -->
-            <h2 class="text-2xl font-semibold text-gray-700 text-center">Créer un Compte</h2>
+    <div class="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-8">
+        <div class="bg-white shadow-card rounded-card-lg border border-gray-200/80 p-6 sm:p-8 max-w-md w-full">
+            <h2 class="text-2xl font-semibold text-gray-800 text-center">Créer un Compte</h2>
             <p class="text-sm text-gray-500 text-center mt-1">Rejoignez-nous en quelques secondes</p>
 
             <!-- Token d'invitation -->
@@ -68,8 +67,8 @@
                 </div>
 
                 <!-- Bouton -->
-                <div class="flex justify-end">
-                    <button type="submit" class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                <div class="flex justify-end mt-6">
+                    <button type="submit" class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
                         Créer un compte
                     </button>
                 </div>
