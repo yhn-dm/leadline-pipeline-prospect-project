@@ -24,7 +24,7 @@
     <!-- Topbar mobile -->
     <div id="topbarMobile"
         class="md:hidden fixed top-0 left-0 right-0 z-50 bg-white h-14 sm:h-16 shadow-sm flex items-center justify-between px-4 border-b border-gray-200">
-        <img src="{{ asset('logo.png') }}" alt="Leadline" class="h-8 sm:h-9 w-auto object-contain">
+        <img src="{{ asset('logo.png') }}" alt="Leadline" class="h-10 sm:h-12 w-auto object-contain">
         <button id="sidebarToggle" type="button" aria-label="Ouvrir le menu"
             class="p-2.5 rounded-xl border border-gray-200 bg-white shadow-sm hover:bg-gray-50 hover:border-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">

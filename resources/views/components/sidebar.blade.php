@@ -4,7 +4,7 @@
     <div class="min-h-screen flex flex-col w-64 flex-shrink-0 antialiased text-gray-800">
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r border-gray-200">
             <div class="hidden md:flex items-center justify-center h-16 border-b border-gray-100 px-4">
-                <img src="{{ asset('logo.png') }}" alt="Leadline" class="h-9 w-auto object-contain">
+                <img src="{{ asset('logo.png') }}" alt="Leadline" class="h-12 w-auto object-contain">
             </div>
 
             <div class="overflow-y-auto overflow-x-hidden flex-grow py-2">

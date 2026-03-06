@@ -11,6 +11,7 @@ use App\Models\Prospect;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class DashboardController extends Controller
@@ -64,10 +65,19 @@ class DashboardController extends Controller
         // =========================
         // 5) Évolution par mois (6 derniers mois)
         // =========================
-        $clientsByMonth = Client::selectRaw('MONTH(created_at) as month, COUNT(id) as total')
+        $driver = DB::connection()->getDriverName();
+        $monthExpr = match ($driver) {
+            'sqlite' => "CAST(strftime('%m', created_at) AS INTEGER)",
+            'mysql', 'mariadb', 'sqlsrv' => 'MONTH(created_at)',
+            'pgsql' => 'EXTRACT(MONTH FROM created_at)',
+            default => 'MONTH(created_at)',
+        };
+
+        $clientsByMonth = Client::query()
             ->where('created_at', '>=', Carbon::now()->subMonths(6))
-            ->groupBy('month')
-            ->orderBy('month')
+            ->selectRaw($monthExpr . ' as month, COUNT(id) as total')
+            ->groupByRaw($monthExpr)
+            ->orderByRaw($monthExpr . ' asc')
             ->get()
             ->pluck('total', 'month');
 
